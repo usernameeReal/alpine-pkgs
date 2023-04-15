@@ -23,7 +23,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - uses: papodaca/install-docker-action@6689d765bf69e0b79e9352e11203caf4acd1d25c
+      - name: Get Docker
+        run: apt update && apt install -y docker.io
 
       # Sadly Actions doesn't offer a native Alpine image, I have to use Docker.
       - name: Do the build
