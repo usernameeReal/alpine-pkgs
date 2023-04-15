@@ -21,4 +21,4 @@ do
 cd $pkg
 abuild -r
 cd ..
-cp $HOME/packages/*.apk ..
+cp $HOME/packages/*.apk .
