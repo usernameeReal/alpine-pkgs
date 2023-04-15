@@ -13,7 +13,7 @@ apk add -U alpine-sdk
 echo "Creating user..."
 adduser -D notroot
 addgroup notroot abuild
-chmod -R 666 /workspace
+chmod -R 777 /workspace
 echo "Dropping priviliges..."
 exec su notroot -c "sh $0"
 fi
