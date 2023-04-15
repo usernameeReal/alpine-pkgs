@@ -29,4 +29,4 @@ cd "$pkg"
 abuild -r
 cd ..
 done
-cp $HOME/packages/pkg/$(uname -m)/*.apk .
+cp $HOME/packages/*/$(uname -m)/*.apk .
