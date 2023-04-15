@@ -6,12 +6,14 @@ then
 echo "Private key missing."
 exit 1
 fi
-echo "Installing stuff..."
-apk add -U alpine-sdk
 if [ "$(id -u)" = "0" ]
 then
+echo "Installing stuff..."
+apk add -U alpine-sdk
+echo "Creating user..."
 adduser -D notroot
 addgroup notroot abuild
+echo "Dropping priviliges..."
 exec su notroot -c "sh $0"
 fi
 echo "Setting up abuild..."
