@@ -20,6 +20,7 @@ echo "Setting up abuild..."
 mkdir -p $HOME/.abuild
 echo 'PACKAGER_PRIVKEY="/tmp/pkey"' > $HOME/.abuild/abuild.conf
 echo "$APKSIGN_PRIVATE_KEY" > /tmp/pkey
+cp pkey.pub /tmp/
 for pkg in baz
 do
 echo "Building $pkg"
