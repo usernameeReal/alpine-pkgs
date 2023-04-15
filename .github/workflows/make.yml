@@ -38,9 +38,3 @@ jobs:
           name: baz
           path: |
             baz-*.apk
-            !baz-bash-completion-*.apk
-      - uses: actions/upload-artifact@v3
-        with:
-          name: baz-bash-completion
-          path: |
-            baz-bash-completion-*.apk
