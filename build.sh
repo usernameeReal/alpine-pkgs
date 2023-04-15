@@ -13,6 +13,7 @@ apk add -U alpine-sdk
 echo "Creating user..."
 adduser -D notroot
 addgroup notroot abuild
+chmod -R 666 /workspace
 echo "Dropping priviliges..."
 exec su notroot -c "sh $0"
 fi
@@ -24,9 +25,7 @@ cp pkey.pub /tmp/
 for pkg in baz
 do
 echo "Building $pkg"
-mkdir "/tmp/build-$pkg"
-cd "/tmp/build-$pkg"
-cp -r "/workspace/$pkg/*" .
+cd "$pkg"
 abuild -r
 cd ..
 done
