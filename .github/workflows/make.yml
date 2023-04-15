@@ -28,7 +28,7 @@ jobs:
         env:
             APKSIGN_PRIVATE_KEY: ${{ secrets.APKSIGN_PRIVATE_KEY }}
         run: |
-            sudo docker run --rm -i -v $PWD:/workspace -e APKSIGN_PRIVATE_KEY alpine sh /workspace/build.sh
+            sudo --preserve-env=APKSIGN_PRIVATE_KEY docker run --rm -i -v $PWD:/workspace -e APKSIGN_PRIVATE_KEY alpine sh /workspace/build.sh
       - uses: actions/upload-artifact@v3
         with:
           name: results
