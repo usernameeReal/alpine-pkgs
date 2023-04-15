@@ -26,4 +26,5 @@ echo "Building $pkg"
 cd "$pkg"
 abuild -r
 cd ..
+done
 cp $HOME/packages/*.apk .
