@@ -24,7 +24,9 @@ cp pkey.pub /tmp/
 for pkg in baz
 do
 echo "Building $pkg"
-cd "$pkg"
+mkdir "/tmp/build-$pkg"
+cd "/tmp/build-$pkg"
+cp -r "/workspace/$pkg/" .
 abuild -r
 cd ..
 done
