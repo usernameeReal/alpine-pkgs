@@ -26,7 +26,7 @@ do
 echo "Building $pkg"
 mkdir "/tmp/build-$pkg"
 cd "/tmp/build-$pkg"
-cp -r "/workspace/$pkg/" .
+cp -r "/workspace/$pkg/*" .
 abuild -r
 cd ..
 done
